@@ -1,0 +1,42 @@
+{%- comment -%}
+  사용법: {% include post-card.html post=post %}
+  data-tags   : 필터 버튼과 매칭되는 슬러그 목록
+  data-search : 검색 대상 문자열(제목 + 요약 + 태그)
+{%- endcomment -%}
+
+{%- assign post = include.post -%}
+{%- assign badge = post.categories.first | default: post.tags.first | default: "Blog" -%}
+{%- if post.summary -%}
+  {%- assign excerpt = post.summary -%}
+{%- else -%}
+  {%- assign excerpt = post.excerpt | strip_html | normalize_whitespace | truncate: 180 -%}
+{%- endif -%}
+
+{%- capture search_blob -%}
+{{ post.title }} {{ excerpt }} {{ post.tags | join: ' ' }} {{ post.categories | join: ' ' }}
+{%- endcapture -%}
+
+<li class="post-card"
+    data-post-card
+    data-tags="{% for t in post.tags %}{{ t | slugify }} {% endfor %}{% for c in post.categories %}{{ c | slugify }} {% endfor %}"
+    data-search="{{ search_blob | strip_html | normalize_whitespace | downcase | escape }}">
+
+  <span class="badge">{{ badge }}</span>
+
+  <h3 class="post-card-title">
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+  </h3>
+
+  <p class="post-card-excerpt lang-ko">{{ excerpt }}</p>
+
+  <div class="post-card-foot">
+    <a class="read-more" href="{{ post.url | relative_url }}">
+      Read more {% include icon.html name="chevron-right" %}
+      <span class="visually-hidden">— {{ post.title }}</span>
+    </a>
+    <span class="post-meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+      {%- if post.read_time %} · {{ post.read_time }}{% endif -%}
+    </span>
+  </div>
+</li>

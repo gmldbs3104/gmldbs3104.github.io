@@ -1,0 +1,36 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+description: "지금까지 쓴 모든 글"
+---
+
+<div class="container">
+  <header class="page-head">
+    <h1 class="page-title">Blog</h1>
+    <p class="page-subtitle lang-ko">지금까지 쓴 글 {{ site.posts.size }}개입니다. 주제로 걸러 보세요.</p>
+  </header>
+</div>
+
+{% include topics.html %}
+
+<div class="container">
+  <div class="layout">
+    <section aria-label="블로그 글 목록">
+      <p class="result-count" data-result-count aria-live="polite"></p>
+
+      <ul class="post-list" data-post-list>
+        {%- for post in site.posts -%}
+          {% include post-card.html post=post %}
+        {%- endfor -%}
+      </ul>
+
+      <div class="empty-state lang-ko" data-empty-state>
+        <p><strong>조건에 맞는 글이 없습니다.</strong></p>
+        <p>다른 주제를 고르거나 검색어를 바꿔 보세요.</p>
+      </div>
+    </section>
+
+    {% include sidebar.html %}
+  </div>
+</div>

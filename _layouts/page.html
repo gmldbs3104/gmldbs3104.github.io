@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="container">
+  <header class="page-head">
+    <h1 class="page-title">{{ page.title }}</h1>
+    {%- if page.subtitle %}
+    <p class="page-subtitle lang-ko">{{ page.subtitle }}</p>
+    {%- endif %}
+  </header>
+
+  {%- if page.sidebar == false %}
+  <div class="section">
+    <div class="prose lang-ko">{{ content }}</div>
+  </div>
+  {%- else %}
+  <div class="layout" style="padding-top: var(--sp-6);">
+    <div class="prose lang-ko">{{ content }}</div>
+    {% include sidebar.html %}
+  </div>
+  {%- endif %}
+</div>

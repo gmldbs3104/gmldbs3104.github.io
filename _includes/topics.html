@@ -1,0 +1,47 @@
+{%- comment -%}
+  Explore Topics 섹션.
+  _config.yml의 topics.featured 순서를 먼저 쓰고,
+  거기 없는 태그는 site.tags에서 이어 붙입니다.
+  topics.visible_count 개까지만 보이고 나머지는 "More…" 로 펼칩니다.
+{%- endcomment -%}
+
+{%- assign visible_count = site.topics.visible_count | default: 5 -%}
+{%- assign ordered = "" | split: "" -%}
+
+{%- for name in site.topics.featured -%}
+  {%- assign one = name | split: "||" -%}
+  {%- assign ordered = ordered | concat: one -%}
+{%- endfor -%}
+
+{%- for tag in site.tags -%}
+  {%- unless ordered contains tag[0] -%}
+    {%- assign one = tag[0] | split: "||" -%}
+    {%- assign ordered = ordered | concat: one -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+<section class="section section--tight topics" id="topics">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Explore Topics That Interest You</h2>
+      <p class="section-desc lang-ko">관심 있는 주제를 눌러 글을 골라 보세요.</p>
+    </div>
+
+    <div class="pill-list" role="group" aria-label="주제로 글 거르기">
+      <button type="button" class="pill" data-filter="all" aria-pressed="true">All</button>
+
+      {%- for name in ordered -%}
+      <button type="button"
+              class="pill{% if forloop.index > visible_count %} is-hidden{% endif %}"
+              data-filter="{{ name | slugify }}"
+              aria-pressed="false">{{ name }}</button>
+      {%- endfor -%}
+
+      {%- if ordered.size > visible_count -%}
+      <button type="button" class="pill pill--more" data-more-topics>
+        More… ({{ ordered.size | minus: visible_count }})
+      </button>
+      {%- endif -%}
+    </div>
+  </div>
+</section>

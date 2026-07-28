@@ -1,0 +1,49 @@
+{%- comment -%}
+  인기 글: 포스트 front matter에 popular: true 를 넣으면 우선 노출되고,
+  개수가 모자라면 최신 글로 채웁니다.
+{%- endcomment -%}
+
+{%- assign popular_count = site.sidebar.popular_count | default: 5 -%}
+{%- assign picked = site.posts | where: "popular", true -%}
+{%- if picked.size < popular_count -%}
+  {%- assign picked = site.posts -%}
+{%- endif -%}
+
+<aside class="sidebar" aria-label="사이드바">
+
+  <!-- 프로필 -->
+  <section class="widget profile-card">
+    <div class="profile-avatar" aria-hidden="true">{{ site.author.name | slice: 0 }}</div>
+    <h2 class="widget-title">{{ site.author.name }}</h2>
+    <p class="profile-bio lang-ko">{{ site.author.bio }}</p>
+  </section>
+
+  <!-- 인기 글 -->
+  <section class="widget">
+    <h2 class="widget-title">{{ site.sidebar.popular_title | default: "Popular Content" }}</h2>
+    <ul class="popular-list">
+      {%- for post in picked limit: popular_count %}
+      <li>
+        <a class="popular-link" href="{{ post.url | relative_url }}">
+          {% include icon.html name="chevron-right" %}
+          <span>{{ post.title }}</span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+
+  <!-- 태그 -->
+  {%- if site.tags.size > 0 %}
+  <section class="widget">
+    <h2 class="widget-title">Tags</h2>
+    <div class="tag-cloud">
+      {%- for tag in site.tags %}
+      <a class="tag-chip" href="{{ '/' | relative_url }}#{{ tag[0] | slugify }}">
+        {{ tag[0] }} <span aria-hidden="true">·</span> {{ tag[1].size }}
+      </a>
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+</aside>

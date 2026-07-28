@@ -1,0 +1,22 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-brand">{{ site.title }}<span class="logo-dot">.</span></p>
+      <p class="footer-tagline lang-ko">{{ site.tagline }}</p>
+    </div>
+
+    <ul class="footer-links">
+      {%- for item in site.nav %}
+      <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+      {%- endfor %}
+      {%- if site.social.github %}
+      <li><a href="https://github.com/{{ site.social.github }}" rel="me noopener">GitHub</a></li>
+      {%- endif %}
+      {%- if site.author.email %}
+      <li><a href="mailto:{{ site.author.email }}">Email</a></li>
+      {%- endif %}
+    </ul>
+
+    <p class="footer-copy">© {{ site.time | date: "%Y" }} {{ site.author.name }}. Built with Jekyll.</p>
+  </div>
+</footer>

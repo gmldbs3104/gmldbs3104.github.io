@@ -1,0 +1,73 @@
+<header class="site-header">
+  <div class="container header-inner">
+
+    <!-- 로고 / 이름 -->
+    <a class="logo" href="{{ '/' | relative_url }}">
+      <span class="logo-mark" aria-hidden="true">{{ site.author.name | slice: 0 }}{{ site.author.name | split: ' ' | last | slice: 0 }}</span>
+      <span>{{ site.title }}<span class="logo-dot">.</span></span>
+    </a>
+
+    <!-- 네비게이션 -->
+    <nav class="nav" id="site-nav" data-nav aria-label="주 메뉴">
+      <ul class="nav-list">
+        {%- for item in site.nav %}
+        <li>
+          <a class="nav-link"
+             href="{{ item.url | relative_url }}"
+             {% if page.url contains item.url and item.url != '/' %}aria-current="page"{% endif %}>
+            {{ item.title }}
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </nav>
+
+    <!-- 우측 액션 -->
+    <div class="header-actions">
+      <button type="button"
+              class="icon-btn"
+              data-search-toggle
+              aria-controls="site-search"
+              aria-expanded="false"
+              aria-label="검색 열기">
+        {% include icon.html name="search" %}
+      </button>
+
+      {%- comment -%}
+        라이트 단일 테마로 구성했기 때문에 다크/라이트 토글 버튼은 넣지 않았습니다.
+        나중에 다크 모드를 추가한다면 아래 주석을 해제하고
+        main.css의 :root 토큰을 [data-theme="dark"] 로 한 벌 더 정의하면 됩니다.
+
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="테마 전환">
+          {% include icon.html name="moon" %}
+        </button>
+      {%- endcomment -%}
+
+      <button type="button"
+              class="icon-btn nav-toggle"
+              data-nav-toggle
+              aria-controls="site-nav"
+              aria-expanded="false"
+              aria-label="메뉴 열기">
+        {% include icon.html name="menu" %}
+      </button>
+    </div>
+  </div>
+
+  <!-- 검색 패널: 현재 페이지에 있는 글 목록을 즉석에서 걸러냅니다 -->
+  <div class="search-panel" id="site-search" data-search-panel>
+    <div class="container search-panel-inner">
+      <form class="search-field" role="search" onsubmit="return false;">
+        {% include icon.html name="search" %}
+        <label class="visually-hidden" for="search-input">글 검색</label>
+        <input class="search-input"
+               id="search-input"
+               type="search"
+               placeholder="제목, 요약, 태그로 검색"
+               autocomplete="off"
+               data-search-input>
+      </form>
+      <p class="search-hint">이 페이지에 있는 글 목록에서 바로 찾습니다. Esc로 닫기.</p>
+    </div>
+  </div>
+</header>

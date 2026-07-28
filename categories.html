@@ -1,0 +1,46 @@
+---
+layout: default
+title: Category
+permalink: /categories/
+description: "카테고리별 글 모음"
+---
+
+<div class="container">
+  <header class="page-head">
+    <h1 class="page-title">Category</h1>
+    <p class="page-subtitle lang-ko">카테고리별로 정리한 글 모음입니다.</p>
+  </header>
+
+  <div class="layout" style="padding-top: var(--sp-6);">
+    <section>
+      {%- assign cats = site.categories | sort -%}
+      {%- if cats.size == 0 -%}
+        <p class="lang-ko">아직 카테고리가 없습니다.</p>
+      {%- endif -%}
+
+      {%- for cat in cats %}
+      <div class="category-block" id="{{ cat[0] | slugify }}">
+        <h2 class="category-block-title">
+          <span class="badge">{{ cat[0] }}</span>
+          <span class="category-block-count">{{ cat[1].size }}개의 글</span>
+        </h2>
+
+        <ul class="popular-list" style="margin-top: var(--sp-4);">
+          {%- for post in cat[1] %}
+          <li>
+            <a class="popular-link" href="{{ post.url | relative_url }}">
+              {% include icon.html name="chevron-right" %}
+              <span>{{ post.title }}
+                <span class="post-meta"> — {{ post.date | date: "%Y.%m.%d" }}</span>
+              </span>
+            </a>
+          </li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endfor %}
+    </section>
+
+    {% include sidebar.html %}
+  </div>
+</div>

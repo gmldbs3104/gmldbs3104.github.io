@@ -1,0 +1,43 @@
+---
+layout: default
+title: null
+---
+
+{% include hero.html %}
+
+{% include topics.html %}
+
+<div class="container">
+  <div class="layout">
+
+    <!-- 본문 컬럼 -->
+    <section aria-label="블로그 글 목록">
+      <div class="section-head">
+        <h2 class="section-title">Latest Posts</h2>
+      </div>
+
+      <p class="result-count" data-result-count aria-live="polite"></p>
+
+      <ul class="post-list" data-post-list>
+        {%- for post in site.posts limit: site.home_post_limit -%}
+          {% include post-card.html post=post %}
+        {%- endfor -%}
+      </ul>
+
+      <div class="empty-state lang-ko" data-empty-state>
+        <p><strong>조건에 맞는 글이 없습니다.</strong></p>
+        <p>다른 주제를 고르거나 검색어를 바꿔 보세요.</p>
+      </div>
+
+      {%- if site.posts.size > site.home_post_limit %}
+      <div style="margin-top: var(--sp-6); text-align: center;">
+        <a class="btn btn--ghost" href="{{ '/blog/' | relative_url }}">
+          모든 글 보기 {% include icon.html name="arrow-right" %}
+        </a>
+      </div>
+      {%- endif %}
+    </section>
+
+    {% include sidebar.html %}
+  </div>
+</div>

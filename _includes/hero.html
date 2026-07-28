@@ -1,0 +1,27 @@
+<section class="hero">
+  <div class="container">
+
+    <!-- 일러스트: SVG를 인라인으로 넣어 CSS 변수(포인트 컬러)가 그대로 적용됩니다.
+         직접 그린 이미지를 쓰려면 아래 include를 <img> 태그로 바꾸세요.
+         <img src="{{ '/assets/img/hero.png' | relative_url }}" alt="" width="460"> -->
+    <div class="hero-illustration">
+      {% include hero-illustration.svg %}
+    </div>
+
+    <h1 class="hero-title">
+      {{ site.hero.greeting }}
+      <span class="accent">{{ site.author.first_name | default: site.author.name }}</span>!
+    </h1>
+
+    <p class="hero-intro lang-ko">{{ site.hero.intro }}</p>
+
+    <div class="hero-actions">
+      <a class="btn btn--primary" href="{{ site.hero.primary_button.url | relative_url }}">
+        {{ site.hero.primary_button.label }}
+      </a>
+      <a class="btn btn--outline" href="{{ site.hero.secondary_button.url | relative_url }}">
+        {{ site.hero.secondary_button.label }}
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<article class="container">
+
+  <header class="post-header">
+    {%- assign badge = page.categories.first | default: page.tags.first -%}
+    {%- if badge %}<span class="badge">{{ badge }}</span>{% endif %}
+
+    <h1 class="post-title">{{ page.title }}</h1>
+
+    <div class="post-header-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y년 %-m월 %-d일" }}</time>
+      <span class="dot" aria-hidden="true">•</span>
+      <span>{{ page.author | default: site.author.name }}</span>
+      {%- if page.read_time %}
+      <span class="dot" aria-hidden="true">•</span>
+      <span>{{ page.read_time }}</span>
+      {%- endif %}
+    </div>
+  </header>
+
+  <div class="layout">
+    <div>
+      <div class="prose lang-ko">
+        {{ content }}
+      </div>
+
+      {%- if page.tags.size > 0 %}
+      <div class="post-tags">
+        {%- for tag in page.tags %}
+        <a class="tag-chip" href="{{ '/' | relative_url }}#{{ tag | slugify }}">#{{ tag }}</a>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+
+      <nav class="post-nav" aria-label="이전 다음 글">
+        {%- if page.previous %}
+        <a class="post-nav-item" href="{{ page.previous.url | relative_url }}">
+          <span class="post-nav-label">이전 글</span>
+          <span class="post-nav-title">{{ page.previous.title }}</span>
+        </a>
+        {%- else %}<span></span>{% endif %}
+
+        {%- if page.next %}
+        <a class="post-nav-item post-nav-item--next" href="{{ page.next.url | relative_url }}">
+          <span class="post-nav-label">다음 글</span>
+          <span class="post-nav-title">{{ page.next.title }}</span>
+        </a>
+        {%- endif %}
+      </nav>
+    </div>
+
+    {% include sidebar.html %}
+  </div>
+</article>
