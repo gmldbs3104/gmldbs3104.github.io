@@ -1,27 +1,26 @@
 # ---------------------------------------------------------------
 # 사이트 기본 정보
 # ---------------------------------------------------------------
-title: "Jiwoo Kim"
-tagline: "프론트엔드 개발자의 기록"
-description: "React와 JavaScript로 웹을 만들면서 배운 것들을 기록합니다."
+title: "Heeyun Ju"
+tagline: "커널부터 화면까지, 시스템을 들여다보는 기록"
+description: "eBPF로 운영체제 동작을 관찰하고, 접근성 있는 인터페이스를 만듭니다."
 author:
-  name: "Jiwoo Kim"
-  first_name: "Jiwoo"          # 히어로 타이틀의 포인트 컬러 부분
-  email: "hello@example.com"
-  bio: "웹에서 사람들이 실제로 쓰는 것을 만듭니다. 배운 것은 글로 남깁니다."
+  name: "Heeyun Ju"
+  first_name: "Heeyun"         # 히어로 타이틀의 포인트 컬러 부분
+  email: "본인메일@example.com"
+  bio: "동국대학교 NOSLab에서 eBPF로 리눅스 커널을 관찰합니다. 화면 뒤에서 무슨 일이 일어나는지 궁금해합니다."
 
-# GitHub Pages 배포 시 반드시 수정하세요.
-# 사용자 페이지(username.github.io)면 baseurl은 "" 로 둡니다.
-url: "https://username.github.io"
+# GitHub Pages 배포 주소
+url: "https://gmldbs3104.github.io"
 baseurl: ""
 
 # ---------------------------------------------------------------
-# 소셜 / 연락처 (footer, contact 페이지에서 사용)
+# 소셜 / 연락처
 # ---------------------------------------------------------------
 social:
-  github: "username"
-  linkedin: "username"
-  twitter: "username"
+  github: "gmldbs3104"
+  linkedin: "heeyun-ju-9922622ab"
+  twitter: ""
 
 # ---------------------------------------------------------------
 # 네비게이션
@@ -42,9 +41,9 @@ nav:
 hero:
   greeting: "Hi, I'm"
   intro: >
-    프론트엔드 개발자입니다. React와 Next.js로 제품을 만들고,
-    그 과정에서 부딪힌 문제와 해결 방법을 이곳에 정리합니다.
-    읽고 바로 써먹을 수 있는 글을 지향합니다.
+    운영체제와 인터페이스 사이를 오갑니다. eBPF로 커널을 건드리지 않고 커널을 관찰하고,
+    화면 앞에서는 누구나 쓸 수 있는 인터페이스를 만듭니다.
+    측정한 것과 만든 것을 여기에 기록합니다.
   primary_button:
     label: "About me"
     url: "/about/"
@@ -54,24 +53,23 @@ hero:
 
 # ---------------------------------------------------------------
 # 토픽 필터 (Explore Topics 섹션)
-#  - visible_count 개까지 노출하고 나머지는 "More…" 버튼으로 펼칩니다.
-#  - featured 에 적은 순서대로 먼저 보여주고, 나머지는 site.tags 에서 채웁니다.
+#  - 글에 실제로 쓰는 태그로 맞춰야 필터가 동작합니다.
 # ---------------------------------------------------------------
 topics:
   visible_count: 5
   featured:
-    - React
-    - JavaScript
-    - Next.js
-    - CSS
-    - TypeScript
+    - eBPF
+    - Linux Kernel
+    - Performance
+    - Accessibility
+    - Frontend
 
 # ---------------------------------------------------------------
 # 사이드바
 # ---------------------------------------------------------------
 sidebar:
   popular_title: "Popular Content"
-  popular_count: 5          # popular: true 인 글이 없으면 최신 글로 채웁니다.
+  popular_count: 5
 
 # ---------------------------------------------------------------
 # 빌드 설정
@@ -80,7 +78,6 @@ permalink: /blog/:year/:month/:day/:title/
 
 # 태그 필터·검색이 클라이언트에서 동작하려면 글 목록이 한 페이지에 모두 있어야 하므로
 # 서버 사이드 페이지네이션은 쓰지 않습니다.
-# 홈에는 home_post_limit 개만 보여주고, 전체 목록은 /blog/ 에 있습니다.
 home_post_limit: 8
 
 markdown: kramdown
@@ -100,7 +97,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Jiwoo Kim"
+      author: "Heeyun Ju"
 
 exclude:
   - Gemfile
