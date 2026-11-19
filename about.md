@@ -6,13 +6,7 @@ permalink: /about/
 description: "Heeyun Ju — 운영체제 연구, 프론트엔드 개발, 통역"
 ---
 
-안녕하세요. **주희윤(Heeyun Ju)**입니다.
-
-## 지금 하는 일
-
 **Undergraduate Student Researcher** · 동국대학교 NOSLab (2026.07 – 현재)
-
-## 지나온 일
 
 **프론트엔드 개발자** · 한전MCS(주) 인턴 (2025.07 – 2025.08)
 
