@@ -1,14 +1,14 @@
 # ---------------------------------------------------------------
 # 사이트 기본 정보
 # ---------------------------------------------------------------
-title: "Heeyun Ju"
-tagline: "커널부터 화면까지, 시스템을 들여다보는 기록"
-description: "eBPF로 운영체제 동작을 관찰하고, 접근성 있는 인터페이스를 만듭니다."
+title: "Heeyun's tech blog"
+# tagline: "커널부터 화면까지, 시스템을 들여다보는 기록"
+# description: "eBPF로 운영체제 동작을 관찰하고, 접근성 있는 인터페이스를 만듭니다."
 author:
   name: "Heeyun Ju"
   first_name: "Heeyun"         # 히어로 타이틀의 포인트 컬러 부분
-  email: "본인메일@example.com"
-  bio: "동국대학교 NOSLab에서 eBPF로 리눅스 커널을 관찰합니다. 화면 뒤에서 무슨 일이 일어나는지 궁금해합니다."
+  email: "heeyun.s.ju@gmail.com"
+  # bio: "동국대학교 NOSLab에서 eBPF로 리눅스 커널을 관찰합니다. 화면 뒤에서 무슨 일이 일어나는지 궁금해합니다."
 
 # GitHub Pages 배포 주소
 url: "https://gmldbs3104.github.io"
@@ -39,17 +39,14 @@ nav:
 # 히어로 섹션
 # ---------------------------------------------------------------
 hero:
-  greeting: "Hi, I'm"
-  intro: >
-    운영체제와 인터페이스 사이를 오갑니다. eBPF로 커널을 건드리지 않고 커널을 관찰하고,
-    화면 앞에서는 누구나 쓸 수 있는 인터페이스를 만듭니다.
-    측정한 것과 만든 것을 여기에 기록합니다.
+  # greeting: "Hi, I'm"
+  # intro: >
   primary_button:
     label: "About me"
     url: "/about/"
-  secondary_button:
-    label: "Let's Connect"
-    url: "/contact/"
+  # secondary_button:
+    # label: "Let's Connect"
+    # url: "/contact/"
 
 # ---------------------------------------------------------------
 # 토픽 필터 (Explore Topics 섹션)
