@@ -22,26 +22,20 @@
     <ul class="profile-links">
       {%- if site.author.email %}
       <li>
-        <a href="mailto:{{ site.author.email }}">
-          {% include icon.html name="mail" %}
-          <span>{{ site.author.email }}</span>
-        </a>
+        <span class="profile-link-label">Email</span>
+        <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
       </li>
       {%- endif %}
       {%- if site.social.github %}
       <li>
-        <a href="https://github.com/{{ site.social.github }}" rel="me noopener">
-          {% include icon.html name="github" %}
-          <span>{{ site.social.github }}</span>
-        </a>
+        <span class="profile-link-label">GitHub</span>
+        <a href="https://github.com/{{ site.social.github }}" rel="me noopener">{{ site.social.github }}</a>
       </li>
       {%- endif %}
       {%- if site.social.linkedin %}
       <li>
-        <a href="https://www.linkedin.com/in/{{ site.social.linkedin }}/" rel="me noopener">
-          {% include icon.html name="linkedin" %}
-          <span>{{ site.author.name }}</span>
-        </a>
+        <span class="profile-link-label">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/{{ site.social.linkedin }}/" rel="me noopener">{{ site.author.name }}</a>
       </li>
       {%- endif %}
     </ul>
