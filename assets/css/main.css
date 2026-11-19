@@ -37,7 +37,7 @@
   --font-mono: "SFMono-Regular", ui-monospace, "JetBrains Mono", Menlo,
                Consolas, monospace;
 
-  --fs-hero:    clamp(2.25rem, 5.2vw, 3.5rem);   /* 36 → 56 */
+  --fs-hero:    clamp(1.625rem, calc(5.2vw - 10px), 2.875rem);   /* 26 → 46 */
   --fs-h1:      clamp(1.875rem, 3.6vw, 2.5rem);  /* 30 → 40 */
   --fs-h2:      clamp(1.5rem, 2.6vw, 1.875rem);  /* 24 → 30 */
   --fs-h3:      1.25rem;
