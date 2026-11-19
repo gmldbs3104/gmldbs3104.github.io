@@ -13,14 +13,14 @@ description: "연락처 및 소셜 링크"
 <div class="contact-grid">
   <a class="contact-card" href="mailto:{{ heeyun.s.ju@gmail.com }}">
     <h3>Email</h3>
-    <p>{{ heeyun.s.ju@gmail.com }}</p>
+    <p>heeyun.s.ju@gmail.com</p>
   </a>
   <a class="contact-card" href="https://github.com/{{ gmldbs3104.github }}" rel="noopener">
     <h3>GitHub</h3>
-    <p>@{{ site.social.github }}</p>
+    <p>gmldbs3104</p>
   </a>
   <a class="contact-card" href="https://www.linkedin.com/in/{{ https://www.linkedin.com/in/heeyun-ju-9922622ab/ }}" rel="noopener">
     <h3>LinkedIn</h3>
-    <p>@{{ Heeyun Ju }}</p>
+    <p>Heeyun Ju</p>
   </a>
 </div>
