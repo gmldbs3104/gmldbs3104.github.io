@@ -17,7 +17,6 @@ GitHub Pages에 그대로 올릴 수 있습니다.
 ├── about.md                    # /about/
 ├── contact.md                  # /contact/
 ├── 404.html
-├── preview.html                # Jekyll 없이 열어보는 정적 미리보기
 ├── _layouts/
 │   ├── default.html            # 공통 뼈대 (head + header + main + footer)
 │   ├── post.html               # 글 상세 (본문 + 사이드바 + 이전/다음)
@@ -46,8 +45,6 @@ bundle install
 bundle exec jekyll serve
 # http://localhost:4000
 ```
-
-Jekyll 없이 디자인만 확인하려면 `preview.html`을 브라우저로 열면 됩니다.
 
 ## 3. 색상 바꾸기
 
