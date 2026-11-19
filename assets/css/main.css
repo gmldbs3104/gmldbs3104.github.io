@@ -368,12 +368,6 @@ code, pre { font-family: var(--font-mono); font-size: 0.9em; }
   text-align: center;
 }
 
-.hero-illustration {
-  max-width: 460px;
-  margin: 0 auto var(--sp-5);
-}
-.hero-illustration svg { width: 100%; height: auto; }
-
 .hero-title {
   font-size: var(--fs-hero);
   font-weight: 700;
@@ -895,7 +889,6 @@ code, pre { font-family: var(--font-mono); font-size: 0.9em; }
 
   .section { padding-block: var(--sp-6); }
   .hero { padding-block: var(--sp-6) var(--sp-5); }
-  .hero-illustration { max-width: 320px; }
 
   .nav-toggle { display: grid; }
 

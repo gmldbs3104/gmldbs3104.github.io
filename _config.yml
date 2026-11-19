@@ -39,14 +39,10 @@ nav:
 # 히어로 섹션
 # ---------------------------------------------------------------
 hero:
-  # greeting: "Hi, I'm"
   # intro: >
   primary_button:
     label: "About me"
     url: "/about/"
-  # secondary_button:
-    # label: "Let's Connect"
-    # url: "/contact/"
 
 # ---------------------------------------------------------------
 # 토픽 필터 (Explore Topics 섹션)

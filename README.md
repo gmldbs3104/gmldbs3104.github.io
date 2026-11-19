@@ -25,7 +25,6 @@ GitHub Pages에 그대로 올릴 수 있습니다.
 │   ├── head.html               # 메타·OG·폰트 preconnect·CSS 링크
 │   ├── header.html             # 로고 / 네비 / 검색 / 햄버거
 │   ├── hero.html               # 히어로 섹션
-│   ├── hero-illustration.svg   # 인라인 SVG 일러스트
 │   ├── topics.html             # 알약형 태그 필터 버튼
 │   ├── post-card.html          # 글 카드 한 장
 │   ├── sidebar.html            # 프로필 / Popular Content / Tags
@@ -34,8 +33,7 @@ GitHub Pages에 그대로 올릴 수 있습니다.
 ├── _posts/                     # 샘플 글 4개
 └── assets/
     ├── css/main.css            # 전체 스타일 (CSS 변수 기반)
-    ├── js/main.js              # 필터 · 검색 · 모바일 메뉴
-    └── img/hero-illustration.svg
+    └── js/main.js              # 필터 · 검색 · 모바일 메뉴
 ```
 
 ## 2. 실행
