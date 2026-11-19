@@ -15,7 +15,36 @@
   <section class="widget profile-card">
     <div class="profile-avatar" aria-hidden="true">{{ site.author.name | slice: 0 }}</div>
     <h2 class="widget-title">{{ site.author.name }}</h2>
+    {%- if site.author.bio %}
     <p class="profile-bio lang-ko">{{ site.author.bio }}</p>
+    {%- endif %}
+
+    <ul class="profile-links">
+      {%- if site.author.email %}
+      <li>
+        <a href="mailto:{{ site.author.email }}">
+          {% include icon.html name="mail" %}
+          <span>{{ site.author.email }}</span>
+        </a>
+      </li>
+      {%- endif %}
+      {%- if site.social.github %}
+      <li>
+        <a href="https://github.com/{{ site.social.github }}" rel="me noopener">
+          {% include icon.html name="github" %}
+          <span>{{ site.social.github }}</span>
+        </a>
+      </li>
+      {%- endif %}
+      {%- if site.social.linkedin %}
+      <li>
+        <a href="https://www.linkedin.com/in/{{ site.social.linkedin }}/" rel="me noopener">
+          {% include icon.html name="linkedin" %}
+          <span>{{ site.author.name }}</span>
+        </a>
+      </li>
+      {%- endif %}
+    </ul>
   </section>
 
   <!-- 인기 글 -->
