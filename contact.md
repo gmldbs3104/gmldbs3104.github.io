@@ -13,7 +13,7 @@ description: "연락처 및 소셜 링크"
 <div class="contact-grid">
   <a class="contact-card" href="mailto:{{ heeyun.s.ju@gmail.com }}">
     <h3>Email</h3>
-    <p>{{ site.author.email }}</p>
+    <p>{{ heeyun.s.ju@gmail.com }}</p>
   </a>
   <a class="contact-card" href="https://github.com/{{ gmldbs3104.github }}" rel="noopener">
     <h3>GitHub</h3>
@@ -21,6 +21,6 @@ description: "연락처 및 소셜 링크"
   </a>
   <a class="contact-card" href="https://www.linkedin.com/in/{{ https://www.linkedin.com/in/heeyun-ju-9922622ab/ }}" rel="noopener">
     <h3>LinkedIn</h3>
-    <p>@{{ site.social.linkedin }}</p>
+    <p>@{{ Heeyun Ju }}</p>
   </a>
 </div>
