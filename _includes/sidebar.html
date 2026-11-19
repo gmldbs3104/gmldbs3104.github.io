@@ -21,22 +21,13 @@
 
     <ul class="profile-links">
       {%- if site.author.email %}
-      <li>
-        <span class="profile-link-label">Email</span>
-        <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
-      </li>
+      <li>Email: <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
       {%- endif %}
       {%- if site.social.github %}
-      <li>
-        <span class="profile-link-label">GitHub</span>
-        <a href="https://github.com/{{ site.social.github }}" rel="me noopener">{{ site.social.github }}</a>
-      </li>
+      <li>GitHub: <a href="https://github.com/{{ site.social.github }}" rel="me noopener">{{ site.social.github }}</a></li>
       {%- endif %}
       {%- if site.social.linkedin %}
-      <li>
-        <span class="profile-link-label">LinkedIn</span>
-        <a href="https://www.linkedin.com/in/{{ site.social.linkedin }}/" rel="me noopener">{{ site.author.name }}</a>
-      </li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/{{ site.social.linkedin }}/" rel="me noopener">{{ site.author.name }}</a></li>
       {%- endif %}
     </ul>
   </section>
