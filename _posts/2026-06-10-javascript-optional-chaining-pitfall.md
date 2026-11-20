@@ -1,10 +1,9 @@
 ---
-title: "옵셔널 체이닝이 감춰버린 버그"
-date: 2026-06-10 20:00:00 +0900
-categories: [JavaScript]
-tags: [JavaScript]
+title: "[FAST '26] Characterizing and Emulating FDP SSDs with WARP"
+date: 2026-11-20
+categories: [FDP]
+tags: [FDP]
 summary: "물음표 하나로 에러는 사라졌지만 원인은 그대로 남아 있었습니다. 방어 코드가 문제를 늦게 발견하게 만드는 경우에 대해."
-read_time: "4분"
 ---
 
 `user?.profile?.name` 은 편합니다. 그런데 편해서 생기는 문제가 있습니다.
