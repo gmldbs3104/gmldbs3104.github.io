@@ -1,8 +1,8 @@
 ---
-title: "[FAST '26] Characterizing and Emulating FDP SSDs with WARP"
-date: 2026-11-20
-categories: [FDP]
-tags: [FDP]
+title: "[ICDE'26] Resystance: Unleashing Hidden Performance of Compaction in LSM-trees via eBPF"
+date: 2026-07-16
+categories: [LSM-tree]
+tags: [LSM-tree]
 summary: "물음표 하나로 에러는 사라졌지만 원인은 그대로 남아 있었습니다. 방어 코드가 문제를 늦게 발견하게 만드는 경우에 대해."
 ---
 
