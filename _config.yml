@@ -13,6 +13,7 @@ author:
 # GitHub Pages 배포 주소
 url: "https://gmldbs3104.github.io"
 baseurl: ""
+timezone: Asia/Seoul
 
 # ---------------------------------------------------------------
 # 소셜 / 연락처
