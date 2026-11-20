@@ -30,7 +30,7 @@ GitHub Pages에 그대로 올릴 수 있습니다.
 │   ├── sidebar.html            # 프로필 / Popular Content / Tags
 │   ├── footer.html
 │   └── icon.html               # SVG 아이콘 모음
-├── _posts/                     # 샘플 글 4개
+├── _posts/                     # 블로그 글
 └── assets/
     ├── css/main.css            # 전체 스타일 (CSS 변수 기반)
     └── js/main.js              # 필터 · 검색 · 모바일 메뉴
