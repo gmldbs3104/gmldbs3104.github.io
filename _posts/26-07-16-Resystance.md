@@ -1,13 +1,11 @@
 ---
-title: "[ICDE'26] Resystance: Unleashing Hidden Performance of Compaction in LSM-trees via eBPF"
+title: "[ICDE '26] Resystance: Unleashing Hidden Performance of Compaction in LSM-trees via eBPF"
 date: 2026-07-16
-categories: [LSM-tree]
-tags: [LSM-tree]
+categories: [LSM-tree, eBPF, io_uring]
+tags: [LSM-tree, eBPF, io_uring]
 paper_review: true
 summary: "LSM-tree compaction이 일으키는 시스템 콜 오버헤드를 eBPF와 io_uring으로 줄여 성능 향상"
 ---
-
-
 
 ## 1. 문제
 병목이 하드웨어에서 소프트웨어로 이동함
