@@ -4,10 +4,9 @@ date: 2026-07-16
 categories: [LSM-tree]
 tags: [LSM-tree]
 paper_review: true
-summary: "."
+summary: "LSM-tree compaction이 일으키는 시스템 콜 오버헤드를 eBPF와 io_uring으로 줄여 성능 향상"
 ---
 
-LSM-tree compaction이 일으키는 시스템 콜 오버헤드를 eBPF와 io_uring으로 줄여, 숨어 있던 성능을 끌어내는 것이 목표입니다. 
 
 
 ## 1. 문제
