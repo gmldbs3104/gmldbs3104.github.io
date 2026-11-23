@@ -13,12 +13,24 @@
   {%- assign ordered = ordered | concat: one -%}
 {%- endfor -%}
 
-{%- for tag in site.tags -%}
-  {%- unless ordered contains tag[0] -%}
-    {%- assign one = tag[0] | split: "||" -%}
-    {%- assign ordered = ordered | concat: one -%}
-  {%- endunless -%}
-{%- endfor -%}
+{%- if include.posts -%}
+  {%- comment -%} posts=... 로 넘기면 그 글들에 쓰인 태그만 버튼으로 만듭니다. {%- endcomment -%}
+  {%- for post in include.posts -%}
+    {%- for tag in post.tags -%}
+      {%- unless ordered contains tag -%}
+        {%- assign one = tag | split: "||" -%}
+        {%- assign ordered = ordered | concat: one -%}
+      {%- endunless -%}
+    {%- endfor -%}
+  {%- endfor -%}
+{%- else -%}
+  {%- for tag in site.tags -%}
+    {%- unless ordered contains tag[0] -%}
+      {%- assign one = tag[0] | split: "||" -%}
+      {%- assign ordered = ordered | concat: one -%}
+    {%- endunless -%}
+  {%- endfor -%}
+{%- endif -%}
 
 <section class="section section--tight topics" id="topics">
   <div class="container">

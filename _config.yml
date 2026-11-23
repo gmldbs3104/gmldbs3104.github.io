@@ -31,6 +31,8 @@ nav:
     url: "/categories/"
   - title: "Blog"
     url: "/blog/"
+  - title: "Paper Review"
+    url: "/papers/"
   - title: "About"
     url: "/about/"
   - title: "Contact"

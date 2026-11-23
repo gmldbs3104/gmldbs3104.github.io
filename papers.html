@@ -1,0 +1,41 @@
+---
+layout: default
+title: Paper Review
+permalink: /papers/
+description: "읽은 논문을 정리한 리뷰 모음"
+---
+
+{%- comment -%}
+  front matter에 paper_review: true 가 있는 글만 모아 보여 줍니다.
+{%- endcomment -%}
+{%- assign papers = site.posts | where: "paper_review", true -%}
+
+<div class="container">
+  <header class="page-head">
+    <h1 class="page-title">Paper Review</h1>
+    <p class="page-subtitle lang-ko">지금까지 정리한 논문 리뷰 {{ papers.size }}개입니다. 주제로 걸러 보세요.</p>
+  </header>
+</div>
+
+{% include topics.html posts=papers %}
+
+<div class="container">
+  <div class="layout">
+    <section aria-label="논문 리뷰 목록">
+      <p class="result-count" data-result-count aria-live="polite"></p>
+
+      <ul class="post-list" data-post-list>
+        {%- for post in papers -%}
+          {% include post-card.html post=post %}
+        {%- endfor -%}
+      </ul>
+
+      <div class="empty-state lang-ko" data-empty-state>
+        <p><strong>조건에 맞는 글이 없습니다.</strong></p>
+        <p>다른 주제를 고르거나 검색어를 바꿔 보세요.</p>
+      </div>
+    </section>
+
+    {% include sidebar.html %}
+  </div>
+</div>

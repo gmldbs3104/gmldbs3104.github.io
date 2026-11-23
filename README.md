@@ -14,6 +14,7 @@ GitHub Pages에 그대로 올릴 수 있습니다.
 ├── index.html                  # 홈 (히어로 + 토픽 필터 + 최신 글 + 사이드바)
 ├── blog.html                   # /blog/  전체 글 목록
 ├── categories.html             # /categories/  카테고리별 모음
+├── papers.html                 # /papers/  논문 리뷰 모음 (paper_review: true 인 글)
 ├── about.md                    # /about/
 ├── contact.md                  # /contact/
 ├── 404.html
